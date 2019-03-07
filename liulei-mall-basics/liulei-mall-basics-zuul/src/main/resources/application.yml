@@ -1,0 +1,20 @@
+server:
+  port: 8220
+spring:
+  application:
+    name: liulei-mall-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8210/eureka
+
+zuul:
+  #网关路由策略
+  routes:
+    member-api:
+      path: /member/**
+      serviceId: liulei-mall-member
+    wechat-api:
+        path: /wechat/**
+        serviceId: liulei-mall-wechat

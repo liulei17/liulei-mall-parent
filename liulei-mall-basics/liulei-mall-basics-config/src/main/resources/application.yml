@@ -1,0 +1,30 @@
+#config配置中心端口号
+server:
+  port: 8888
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.109.231:8210/eureka
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: liulei-mall-config
+  #整合rabbitmq
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+  cloud:
+    #配置中心配置
+    config:
+      server:
+        git:
+          uri: https://git.lug.ustc.edu.cn/liulei17/springcloud.git # 配置gitlab仓库的地址，注意，此处必须以.git结尾
+          username: liulei17 # gitlab仓库的账号  
+          password: liulei11 # gitlab仓库的密码 
+          search-paths: /zjconfig #gitlab仓库地址下的相对地址，可以配置多个，用,分割
+      label: master #配置文件所在的分支

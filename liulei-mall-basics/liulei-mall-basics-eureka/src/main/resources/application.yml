@@ -1,0 +1,22 @@
+##注册中心服务端口号
+server:
+  port: 8210
+spring:
+  application:
+    name: liulei-mall-eureka-server
+###eureka 基本信息配置
+eureka:
+  instance:
+    ###注册到eureka的ip地址
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    #因为自己是为注册中心，不需要自己注册自己
+    register-with-eureka: false
+    #因为自己是为注册中心，不需要检索服务
+    fetch-registry: false
+  #关闭自我保护机制，默认true开启（建议开发时关闭，正式环境需开启）
+  server:
+    enableSelfPreservation: false
+

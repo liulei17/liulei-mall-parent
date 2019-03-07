@@ -1,0 +1,27 @@
+server:
+  port: 8230
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8210/eureka/
+
+spring:
+  application:
+    name: liulei-mall-member
+  redis:
+    host: 192.168.2.14
+    port: 6379
+    pool:
+      max-idle: 100
+      min-idle: 1
+      max-active: 1000
+      max-wait: -1
+###数据库相关连接      
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/liulei_member
+
+  
