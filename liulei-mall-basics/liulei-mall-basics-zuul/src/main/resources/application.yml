@@ -3,7 +3,7 @@ server:
 spring:
   application:
     name: liulei-mall-zuul
-
+#注册中心地址
 eureka:
   client:
     service-url:
